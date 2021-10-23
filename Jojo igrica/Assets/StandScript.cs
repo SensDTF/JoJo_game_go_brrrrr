@@ -12,6 +12,8 @@ public class StandScript : MonoBehaviour
     StandFolow folowScript;
 
     RotateTo roatateScript;
+
+    public GameObject StandHand;
     
     void Start()
     {
@@ -42,6 +44,10 @@ public class StandScript : MonoBehaviour
             
         }
 
+        if (Attacked) {
+            Instantiate(StandHand, transform.position,transform.GetChild(0).rotation*  Quaternion.Euler(90, 0, 0));
+        }
+
     }
 
     public void Attack() {
@@ -54,11 +60,12 @@ public class StandScript : MonoBehaviour
     }
     public void StopAttack()
     {
-        folowScript.Folow(StandPlace);
-        folowScript.SetMs(14);
-        Invoke("StartRotate", 1);
+       
         if (Attacked)
         {
+            folowScript.Folow(StandPlace);
+            folowScript.SetMs(14);
+            Invoke("StartRotate", 1);
             AttackCd = 3f;
             Attacked = false;
         }

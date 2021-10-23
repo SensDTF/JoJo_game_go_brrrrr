@@ -1949,6 +1949,7 @@ MonoBehaviour:
   StandPlace: {fileID: 430422029}
   AttackPlace: {fileID: 1486292596}
   ReturnPlace: {fileID: 109375666}
+  StandHand: {fileID: 1031830757051288588, guid: a7a0d8d2b3b32de47955e4abf5bd1030, type: 3}
 --- !u!114 &1826787500
 MonoBehaviour:
   m_ObjectHideFlags: 0
